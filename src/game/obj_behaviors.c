@@ -770,8 +770,8 @@ void spawn_orange_number(s8 behParam, s16 relX, s16 relY, s16 relZ) {
     orangeNumber = spawn_object_relative(behParam, relX, relY, relZ, o, MODEL_NUMBER, bhvOrangeNumber);
     orangeNumber->oPosY += 25.0f;
 }
-void printTrueFalse(struct Object hidden_star){
-    if(hidden_star ! NULL){
+void printTrueFalse(struct Object *hidden_star){
+    if(*hidden_star ! NULL){
         print_text(20, 20, "T");
     }
     else{
