@@ -27,7 +27,7 @@ static void racing_penguin_act_wait_for_mario(void) {
 static void racing_penguin_act_show_init_text(void) {
     s32 response;
     struct Object *child;
-
+    struct Object *hiddenStar;
     response = obj_update_race_proposition_dialog(sRacingPenguinData[o->oBehParams2ndByte].text);
     if (response == 1) {
         child = obj_nearest_object_with_behavior(bhvPenguinRaceFinishLine);
@@ -42,6 +42,11 @@ static void racing_penguin_act_show_init_text(void) {
 
         o->oAction = RACING_PENGUIN_ACT_PREPARE_FOR_RACE;
         o->oVelY = 60.0f;
+        hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
+        if (hiddenStar != NULL)
+        {
+         hiddenStar->oHiddenStarTriggerCounter = 8;
+     }
         ;
     } else if (response == 2) {
         o->oAction = RACING_PENGUIN_ACT_WAIT_FOR_MARIO;
@@ -166,11 +171,6 @@ void bhv_racing_penguin_update(void) {
             break;
         case RACING_PENGUIN_ACT_SHOW_INIT_TEXT:
             racing_penguin_act_show_init_text();
-            struct Object *hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
-            if (hiddenStar != NULL)
-            {
-               hiddenStar->oHiddenStarTriggerCounter = 8;
-            }
             break;
         case RACING_PENGUIN_ACT_PREPARE_FOR_RACE:
             racing_penguin_act_prepare_for_race();
