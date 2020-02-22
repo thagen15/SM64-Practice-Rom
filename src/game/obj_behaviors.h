@@ -64,6 +64,7 @@ void bhv_butterfly_init(void);
 void ButterflyStep(s32 speed);
 void CalculateButterflyAngle(void);
 void ButterflyRestingLoop(void);
+void printTrueFalse(struct Object);
 void ButterflyFollowMarioLoop(void);
 void ButterflyReturnHomeLoop(void);
 void bhv_butterfly_loop(void);
