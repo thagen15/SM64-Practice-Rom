@@ -30,7 +30,7 @@
 #include "level_table.h"
 #include "dialog_ids.h"
 #include "course_table.h"
-
+#include "print.h"
 /**
  * @file obj_behaviors.c
  * This file contains a portion of the obj behaviors and many helper functions for those
@@ -770,7 +770,14 @@ void spawn_orange_number(s8 behParam, s16 relX, s16 relY, s16 relZ) {
     orangeNumber = spawn_object_relative(behParam, relX, relY, relZ, o, MODEL_NUMBER, bhvOrangeNumber);
     orangeNumber->oPosY += 25.0f;
 }
-
+void printTrueFalse(struct Object hidden_star){
+    if(hiddenStar ! NULL){
+        print_text(20, 20, "T");
+    }
+    else{
+        print_text(20,20, "F");
+    }
+}
 /**
  * Unused variables for debug_sequence_tracker.
  */
