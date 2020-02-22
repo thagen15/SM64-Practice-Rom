@@ -160,14 +160,13 @@ static void racing_penguin_act_show_final_text(void) {
 
 void bhv_racing_penguin_update(void) {
     obj_update_floor_and_walls();
-    struct Object *hiddenStar;
     switch (o->oAction) {
         case RACING_PENGUIN_ACT_WAIT_FOR_MARIO:
             racing_penguin_act_wait_for_mario();
             break;
         case RACING_PENGUIN_ACT_SHOW_INIT_TEXT:
             racing_penguin_act_show_init_text();
-            hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
+            struct Object *hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
             if (hiddenStar != NULL)
             {
                hiddenStar->oHiddenStarTriggerCounter = 8;
