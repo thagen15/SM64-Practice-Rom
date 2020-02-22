@@ -37,12 +37,7 @@ void bhv_hidden_star_loop(void) {
 void bhv_hidden_star_trigger_loop(void) {
     struct Object *hiddenStar;
     hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
-    if(hiddenStar ! NULL){
-        print_text(20, 20, "T");
-    }
-    else{
-        print_text(20,20, "F");
-    }
+    printTrueFalse(hiddenStar);
     if (are_objects_collided(o, gMarioObject) == 1) {
         hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
         if (hiddenStar != NULL) {
