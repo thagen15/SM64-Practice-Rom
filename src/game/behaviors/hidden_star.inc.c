@@ -1,4 +1,5 @@
 // hidden_star.c.inc
+#include "print.h"
 
 void bhv_hidden_star_init(void) {
     s16 sp36;
@@ -35,6 +36,13 @@ void bhv_hidden_star_loop(void) {
 /* TODO: this is likely not a checkpoint but a Secret */
 void bhv_hidden_star_trigger_loop(void) {
     struct Object *hiddenStar;
+    hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
+    if(hiddenStar ! NULL){
+        print_text(20, 20, "T");
+    }
+    else{
+        print_text(20,20, "F");
+    }
     if (are_objects_collided(o, gMarioObject) == 1) {
         hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
         if (hiddenStar != NULL) {
