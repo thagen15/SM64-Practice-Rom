@@ -771,7 +771,7 @@ void spawn_orange_number(s8 behParam, s16 relX, s16 relY, s16 relZ) {
     orangeNumber->oPosY += 25.0f;
 }
 void printTrueFalse(struct Object hidden_star){
-    if(hiddenStar ! NULL){
+    if(hidden_star ! NULL){
         print_text(20, 20, "T");
     }
     else{
