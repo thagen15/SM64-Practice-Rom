@@ -167,11 +167,12 @@ void bhv_racing_penguin_update(void) {
             break;
         case RACING_PENGUIN_ACT_SHOW_INIT_TEXT:
             racing_penguin_act_show_init_text();
-             hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
-             if (hiddenStar != NULL)
-              {
-                hiddenStar->oHiddenStarTriggerCounter = 8;
-              }
+            struct Object *hiddenStar;
+            hiddenStar = obj_nearest_object_with_behavior(bhvHiddenStar);
+            if (hiddenStar != NULL)
+            {
+               hiddenStar->oHiddenStarTriggerCounter = 8;
+            }
             break;
         case RACING_PENGUIN_ACT_PREPARE_FOR_RACE:
             racing_penguin_act_prepare_for_race();
