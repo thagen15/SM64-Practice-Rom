@@ -1,5 +1,4 @@
 // hidden_star.c.inc
-#include "src/print.h"
 
 void bhv_hidden_star_init(void) {
     s16 sp36;
